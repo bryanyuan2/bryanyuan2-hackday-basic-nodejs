@@ -24,6 +24,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(helmet());
 
+/*
+    public resource
+    http://localhost:8080/images/yahoo.png
+*/
+app.use(express.static('public'));
+
 /* root */
 router.get('/', function(req, res) {
     res.json({ message: 'bryanyuan2 hackday api' });
